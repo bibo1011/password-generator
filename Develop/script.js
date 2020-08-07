@@ -18,9 +18,9 @@ var generateBtn = document.querySelector("#generate");
 var criteria = function(){
   var pwLength = prompt("Give password length (password has to be between 8 - 128 characters only)", "8"); 
   console.log(criteria);
-
-  var pwUpperCase = prompt("Do you want to use uppercase characters?");
-  console.log(pwUpperCase);
+  if (pwLength < 8 || pwLength > 128) {
+    criteria();
+  }
 
   var pwLowerCase = prompt("Do you want to use lowercase characters?");
   console.log(pwLowerCase);
