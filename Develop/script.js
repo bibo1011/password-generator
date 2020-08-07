@@ -16,11 +16,14 @@ var generateBtn = document.querySelector("#generate");
 // Prompt for character types: lowercase, uppercase, numeric and/or special characters
 
 var criteria = function(){
-  prompt("Give password length (password has to be between 8 - 128 characters only)");
+  var pwLength = prompt("Give password length (password has to be between 8 - 128 characters only)", "8"); 
   console.log(criteria);
-
+  if (pwLength < 8 || pwLength > 128) {
+    criteria();
+  }
   var pwUpperCase = prompt("Do you want to use uppercase characters?");
   console.log(pwUpperCase);
+    
 
   var pwLowerCase = prompt("Do you want to use lowercase characters?");
   console.log(pwLowerCase);
