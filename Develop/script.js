@@ -20,11 +20,26 @@ var criteria = function(){
   console.log(criteria);
   if (pwLength < 8 || pwLength > 128) {
     criteria();
+    return pwLength
   }
+  //3rd try
+  // switch(charTypes) {
+
+  // }
+
+  // 2nd try
+  // var charTypes = {
+  //   pwUpperCase:prompt("Do you want to use uppercase characters?"),
+  //   pwLowerCase:prompt("Do you want to use lowercase characters?")
+  // }
+
+  // 1st try
   var pwUpperCase = prompt("Do you want to use uppercase characters?");
   console.log(pwUpperCase);
+  if (pwUpperCase == "yes" || pwUpperCase == "YES") {
     
-
+  }
+    
   var pwLowerCase = prompt("Do you want to use lowercase characters?");
   console.log(pwLowerCase);
 
