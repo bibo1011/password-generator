@@ -6,24 +6,22 @@
 // Generate a password that matches all the criteria selected
 // Password generated is displayed: alert or on page
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
 // On click, series of prompts for password criteria
 // Prompt for password criteria to include
 // Prompt for length of password: 8 to 128 characters
-var pwLength = function(){
-  prompt("Give password length (password has to be between 8 - 128 characters only)");
-  console.log(pwLength);
-  for (var i = 0; i < pwLength; i++){
-    if (pwLength < 8 || pwLength > 128); 
-      pwLength();
-    } else {
-      break;
+var pwLength = function(number) {
+  while (pwLength < 8 || pwLength > 128) {
+    prompt("Give password length (password has to be between 8 - 128 characters only)");
+    console.log(pwLength);
+    if (pwLength >= 8 || pwLength <= 128) {
+    charTypes();
+    } 
   }
 }
-pwLength()
-
-
-
+  
 // Prompt for character types: lowercase, uppercase, numeric and/or special characters
 var charTypes = function(){
   var pwUpperCase = prompt("Do you want to use uppercase characters?");
@@ -36,8 +34,16 @@ var charTypes = function(){
   console.log(pwSpecial);
 }
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+// for (var i = 0; i < pwLength; i++){
+ 
+
+    // } else {
+    // charTypes();
+// }
+// pwLength()
+// charTypes()
+
+
 
 
 // var generateBtn = document.getElementById("generate");
