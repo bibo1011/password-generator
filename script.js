@@ -1,7 +1,10 @@
 // Assignment code here
-var value = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
-var password = ""
-const specialCharacters = "!@#$%^&*()";
+
+
+// On click, series of prompts for password criteria
+// Prompt for password criteria to include
+// Prompt for length of password: 8 to 128 characters
+// Prompt for character types: lowercase, uppercase, numeric and/or special characters
 // Answer should be validated and at least one character type selected
 // Generate a password that matches all the criteria selected
 // Password generated is displayed: alert or on page
@@ -13,10 +16,10 @@ var generateBtn = document.querySelector("#generate");
 
 var generatePassword = function(){
   var pwLength = prompt("Give password length (password has to be between 8 - 128 characters only)", "8"); 
-  console.log(generatePassword);
   if (pwLength < 8 || pwLength > 128) {
-    criteria();
+    generatePassword();
   }
+  console.log(pwLength);
   var pwUpperCase = prompt("Do you want to use uppercase characters?");
   console.log(pwUpperCase);
   var pwLowerCase = prompt("Do you want to use lowercase characters?");
@@ -25,38 +28,8 @@ var generatePassword = function(){
   console.log(pwNumeric);
   var pwSpecial = prompt("Do you want to use special characters?");
   console.log(pwSpecial);
-    
-  var minimumCount = 0;
-
-
-
-  var pwUpperCase = "";
-  var pwLowerCase = "";
-  var pwNumeric = "";
-  var pwSpecial = "";
-
-
- 
-  var functionArray = {
-    getpwUpperCase: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
-    },
-   
-    getpwLowerCase: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
-    },
-
-    getNumeric: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-    },
-
-    getSpecial: function() {
-      return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-    }
-
-  };
-} 
-
+}    
+  
 
 
 // Write password to the #password input
