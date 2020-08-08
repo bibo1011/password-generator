@@ -11,4 +11,4 @@ Password generated should have least one of the character type listed
 
 ## Screenshot:
 
-![alt text](https://github.com/bibo1011/password-generator/develop/images/screenshot.png "password generator")
+![alt text](https://github.com/bibo1011/password-generator/develop/images/screenshot-pg.png "password generator")
