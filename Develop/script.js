@@ -1,11 +1,7 @@
 // Assignment code here
 var value = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
 var password = ""
-
-// On click, series of prompts for password criteria
-// Prompt for password criteria to include
-// Prompt for length of password: 8 to 128 characters
-// Prompt for character types: lowercase, uppercase, numeric and/or special characters
+const specialCharacters = "!@#$%^&*()";
 // Answer should be validated and at least one character type selected
 // Generate a password that matches all the criteria selected
 // Password generated is displayed: alert or on page
@@ -20,23 +16,47 @@ var generatePassword = function(){
   console.log(generatePassword);
   if (pwLength < 8 || pwLength > 128) {
     criteria();
-  } else {
-
-    var charTypes = prompt("Select character type you want to include on your password: UpperCase, LowerCase, Numeric, Special");
-    switch(charTypes) {
-    case "UpperCase": toUpperCase();
-    
-      break;
-    case "LowerCase": toLowerCase();
-      
-      break;
-    case "Numeric": (Math.floor(Math.random) * 10)
-      
-      break;
-    case "Special":
-    }
   }
-}   
+  var pwUpperCase = prompt("Do you want to use uppercase characters?");
+  console.log(pwUpperCase);
+  var pwLowerCase = prompt("Do you want to use lowercase characters?");
+  console.log(pwLowerCase);
+  var pwNumeric = prompt("Do you want to use numeric characters?");
+  console.log(pwNumeric);
+  var pwSpecial = prompt("Do you want to use special characters?");
+  console.log(pwSpecial);
+    
+  var minimumCount = 0;
+
+
+
+  var pwUpperCase = "";
+  var pwLowerCase = "";
+  var pwNumeric = "";
+  var pwSpecial = "";
+
+
+ 
+  var functionArray = {
+    getpwUpperCase: function() {
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+    },
+   
+    getpwLowerCase: function() {
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+    },
+
+    getNumeric: function() {
+      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+    },
+
+    getSpecial: function() {
+      return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+    }
+
+  };
+} 
+
 
 
 // Write password to the #password input
